@@ -262,3 +262,15 @@ VALUES
 
 ('ACC-001', 'Sports Band', 'Accessory', 29.99, FALSE),
 ('ACC-002', 'Charging Dock', 'Accessory', 39.99, FALSE);
+
+--Let's add data to the geolocation table
+INSERT INTO geolocation (city, state, country, latitude, longitude, postal_code, time_zone)
+VALUES
+('New York', 'NY', 'USA', 40.7128, -74.0060, '10001', 'EST'),
+('Los Angeles', 'CA', 'USA', 34.0522, -118.2437, '90001', 'PST'),
+('Chicago', 'IL', 'USA', 41.8781, -87.6298, '60601', 'CST'),
+('Toronto', 'ON', 'Canada', 43.6532, -79.3832, 'M5H 2N2', 'EST'),
+('London', 'England', 'United Kingdom', 51.5074, -0.1278, 'WC2N 5DU', 'GMT'),
+('Sydney', 'NSW', 'Australia', -33.8688, 151.2093, '2000', 'AEST'),
+('Tokyo', 'Tokyo', 'Japan', 35.6762, 139.6503, '100-0005', 'JST'),
+('Mumbai', 'Maharashtra', 'India', 19.0760, 72.8777, '400001', 'IST');
