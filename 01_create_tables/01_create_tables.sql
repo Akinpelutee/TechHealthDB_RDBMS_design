@@ -79,3 +79,16 @@ CREATE TABLE products (
     base_price DECIMAL(10,2) NOT NULL CHECK (base_price >= 0),
     is_subscription BOOLEAN NOT NULL DEFAULT FALSE
 );
+
+--Let's insert a sample geolocation data
+CREATE TABLE geolocation (
+    geo_id SERIAL PRIMARY KEY,
+    city VARCHAR(100) NOT NULL,
+    state VARCHAR(50) NOT NULL,
+    country VARCHAR(100) NOT NULL,
+    latitude DECIMAL(9,6) NULL CHECK (latitude BETWEEN -90 AND 90),
+    longitude DECIMAL(9,6) NULL CHECK (longitude BETWEEN -180 AND 180),
+    postal_code VARCHAR(20) NULL,
+    time_zone VARCHAR(50) NULL,
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
