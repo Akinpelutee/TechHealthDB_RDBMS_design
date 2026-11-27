@@ -245,3 +245,20 @@ VALUES
 ('DEV049', 'TH049', 'HealthTrack Lite', '2022-06-05', '2023-06-14', 'v3.1.0', 7.1, 12, 10.2, 654321, 44, TRUE, TRUE, FALSE, TRUE, 'Inactive'),
 ('DEV050', 'TH050', 'HealthTrack Pro', '2021-12-25', '2023-06-15', 'v3.2.1', 5.3, 24, 16.0, 2789012, 197, TRUE, TRUE, TRUE, TRUE, 'Active'),
 ('DEV051', 'TH016', 'HealthTrack Pro 2', '2025-05-08', '2025-05-08', 'v4.0.0', 8.0, 12, 10.0, 0, 0, TRUE, TRUE, FALSE, TRUE, 'Active');
+
+
+--Let's add data to the products table
+INSERT INTO products(
+    product_id, product_name, product_category, base_price, is_subscription
+)
+VALUES
+('PRO-001', 'HealthTrack Pro', 'Device', 299.99, FALSE),
+('LIT-001', 'HealthTrack Lite', 'Device', 199.99, FALSE),
+('ELT-001', 'HealthTrack Elite', 'Device', 499.99, FALSE),
+
+('SUB-001', 'Premium Subscription', 'Subscription', 14.99, TRUE),
+('SUB-002', 'Basic Subscription', 'Subscription',  9.99, TRUE),
+('SUB-003', 'Enterprise Subscription', 'Subscription', 24.99, TRUE),
+
+('ACC-001', 'Sports Band', 'Accessory', 29.99, FALSE),
+('ACC-002', 'Charging Dock', 'Accessory', 39.99, FALSE);
