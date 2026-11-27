@@ -1,7 +1,7 @@
 --Create Customers Table
 CREATE TABLE customers(
 	user_id VARCHAR(10) PRIMARY KEY,
-	age INT NOT NULL CHECK(age BETWEEN 0 AND 20),
+	age INT NOT NULL CHECK(age BETWEEN 0 AND 120),
 	gender CHAR(1) NOT NULL CHECK(gender IN('M', 'F')),
 	city VARCHAR(100) NOT NULL,
 	state VARCHAR(50),
@@ -24,7 +24,7 @@ CREATE TABLE sales(
 	quantity INT NOT NULL CHECK(quantity > 0),
 	discount_applied DECIMAL(5,2) CHECK(discount_applied BETWEEN 0 AND 100),
 	total_amount DECIMAL(10,2) NOT NULL CHECK(total_amount > 0),
-	payment_method VARCHAR(50) NOT NUL CHECK(payment_method IN('Credit Card','Pay Pal','Bank Transfer')),
+	payment_method VARCHAR(50) NOT NULL CHECK(payment_method IN('Credit Card','PayPal','Bank Transfer')),
 	subscription_plan VARCHAR(50),
     sales_channel VARCHAR(50) NOT NULL CHECK (sales_channel IN ('Online', 'Retail', 'Direct Sales')),
     region VARCHAR(50) NOT NULL,
