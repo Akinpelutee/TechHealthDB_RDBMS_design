@@ -16,3 +16,10 @@ ALTER TABLE devices
 ADD CONSTRAINT fk_devices_customers
 FOREIGN KEY (user_id) REFERENCES customers(user_id)
 ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+--Let's add a foreign key constraint to the sales table to link product_id to the products table
+ALTER TABLE sales
+ADD CONSTRAINT fk_sales_products
+FOREIGN KEY (product_id) REFERENCES products(product_id)
+ON DELETE CASCADE ON UPDATE CASCADE;
