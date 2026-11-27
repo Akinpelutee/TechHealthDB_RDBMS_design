@@ -69,3 +69,13 @@ CREATE TABLE devices (
     notification_enabled BOOLEAN NOT NULL DEFAULT FALSE,
     device_status VARCHAR(50) NOT NULL CHECK (device_status IN ('Active', 'Inactive', 'Retired'))
 );
+
+
+--Let's create a product table because the sales table has a product_id and product_name but no product table to reference. This will help in maintaining data integrity and avoid redundancy.
+CREATE TABLE products (
+    product_id VARCHAR(20) PRIMARY KEY,
+    product_name VARCHAR(100) NOT NULL,
+    product_category VARCHAR(50) NOT NULL CHECK (product_category IN ('Device', 'Accessory', 'Subscription')),
+    base_price DECIMAL(10,2) NOT NULL CHECK (base_price >= 0),
+    is_subscription BOOLEAN NOT NULL DEFAULT FALSE
+);
